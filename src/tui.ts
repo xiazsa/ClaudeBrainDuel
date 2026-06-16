@@ -127,7 +127,7 @@ export class Tui {
 
     switch (command) {
       case "goal":
-        if (!arg) this.lastNotice = "用法：/goal 做一个美工很好的贪吃蛇项目";
+        if (!arg) this.lastNotice = "用法：/goal 你现在从零开始制作一个“想象力不设限”的贪吃蛇游戏。";
         else {
           this.goal = arg;
           this.lastNotice = "目标已更新。输入 /start 开始。";
@@ -534,10 +534,10 @@ function renderStartupGuide(refreshIntervalSec: number): string {
     "启动方式有两种：",
     "",
     "1. 直接在这里输入一句目标并回车，使用当前配置启动：",
-    "   做一个美工很好的贪吃蛇项目，要求可运行、有 README、有测试",
+    "   你现在从零开始制作一个“想象力不设限”的贪吃蛇游戏。不要只做普通版本，要尽最大可能发挥想象力：从玩法、视觉、音效、关卡、成长系统、AI敌人、地图机制、剧情、技能、道具、多人模式、物理效果、隐藏彩蛋等角度持续扩展。先实现一个可运行版本，再不断迭代成更有创意、更完整、更惊艳的作品。每次完成一轮开发后，必须输出：1）本轮实现了什么；2）还能如何继续发挥想象力；3）下一轮具体要做什么。无论当前版本多完善，都不允许停止思考下一步创意。",
     "",
     "2. 在命令行启动时带参数：",
-    '   cbduel run "做一个美工很好的贪吃蛇项目" --rounds 8 --min-rounds 3 --time-limit-min 60 --min-runtime-min 10 --landing soft --refresh-interval-sec 3',
+    '   cbduel run "你现在从零开始制作一个“想象力不设限”的贪吃蛇游戏。不要只做普通版本，要尽最大可能发挥想象力：从玩法、视觉、音效、关卡、成长系统、AI敌人、地图机制、剧情、技能、道具、多人模式、物理效果、隐藏彩蛋等角度持续扩展。先实现一个可运行版本，再不断迭代成更有创意、更完整、更惊艳的作品。每次完成一轮开发后，必须输出：1）本轮实现了什么；2）还能如何继续发挥想象力；3）下一轮具体要做什么。无论当前版本多完善，都不允许停止思考下一步创意。" --rounds 8 --min-rounds 3 --time-limit-min 60 --min-runtime-min 10 --landing soft --refresh-interval-sec 3',
     "",
     renderParameterGuide(refreshIntervalSec)
   ].join("\n");

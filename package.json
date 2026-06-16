@@ -2,7 +2,7 @@
   "name": "claude-brain-duel",
   "version": "0.1.0",
   "description": "Local unattended Master/Worker AI development orchestrator powered by Claude Code CLI.",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "keywords": [
     "claude-code",
     "ai-agent",
