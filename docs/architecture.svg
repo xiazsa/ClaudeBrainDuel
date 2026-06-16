@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" role="img" aria-labelledby="title desc">
+  <title id="title">ClaudeBrainDuel architecture</title>
+  <desc id="desc">A local controller orchestrates Master and Worker Claude Code calls through a JSONL bus, Git, tests, build logs, and final reports.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="52%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#e2e8f0" stop-opacity="0.98"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#38bdf8"/>
+    </marker>
+    <style>
+      .title { font: 700 34px "Segoe UI", Arial, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 17px "Segoe UI", Arial, sans-serif; fill: #cbd5e1; }
+      .box-title { font: 700 21px "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .box-body { font: 400 15px "Segoe UI", Arial, sans-serif; fill: #334155; }
+      .small { font: 600 13px "Segoe UI", Arial, sans-serif; fill: #0f766e; }
+      .badge { fill: #ecfeff; stroke: #06b6d4; stroke-width: 1.4; }
+      .line { stroke: #38bdf8; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .line2 { stroke: #34d399; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .card { fill: url(#panel); stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+    </style>
+  </defs>
+  <rect width="1180" height="620" rx="0" fill="url(#bg)"/>
+  <text x="50" y="62" class="title">ClaudeBrainDuel</text>
+  <text x="50" y="94" class="subtitle">Local unattended Master / Worker AI development loop powered by Claude Code CLI</text>
+
+  <rect x="56" y="170" width="230" height="180" rx="14" class="card"/>
+  <text x="82" y="214" class="box-title">User Goal</text>
+  <text x="82" y="248" class="box-body">One sentence target</text>
+  <text x="82" y="274" class="box-body">TUI or headless run</text>
+  <text x="82" y="300" class="box-body">Min rounds / runtime</text>
+  <rect x="82" y="318" width="148" height="28" rx="14" class="badge"/>
+  <text x="100" y="337" class="small">hands-off control</text>
+
+  <rect x="390" y="135" width="360" height="250" rx="16" class="card"/>
+  <text x="420" y="179" class="box-title">Orchestrator</text>
+  <text x="420" y="212" class="box-body">Owns the run loop and state</text>
+  <text x="420" y="238" class="box-body">Calls Claude with structured prompts</text>
+  <text x="420" y="264" class="box-body">Collects Git diff, tests, build logs</text>
+  <text x="420" y="290" class="box-body">Decides next round, stop, commit, report</text>
+  <rect x="420" y="318" width="260" height="28" rx="14" class="badge"/>
+  <text x="438" y="337" class="small">the only scheduler and message router</text>
+
+  <rect x="864" y="116" width="250" height="150" rx="14" class="card"/>
+  <text x="892" y="158" class="box-title">Master Brain</text>
+  <text x="892" y="190" class="box-body">Plans worker tasks</text>
+  <text x="892" y="216" class="box-body">Defines acceptance criteria</text>
+  <text x="892" y="242" class="box-body">Reviews pass / partial / fail</text>
+
+  <rect x="864" y="350" width="250" height="150" rx="14" class="card"/>
+  <text x="892" y="392" class="box-title">Worker Brain</text>
+  <text x="892" y="424" class="box-body">Reads the project</text>
+  <text x="892" y="450" class="box-body">Edits code and docs</text>
+  <text x="892" y="476" class="box-body">Runs tests and builds</text>
+
+  <rect x="354" y="460" width="438" height="94" rx="14" class="card"/>
+  <text x="386" y="497" class="box-title">Local Artifacts</text>
+  <text x="386" y="528" class="box-body">JSONL bus, iteration logs, Git diff, test/build logs, final_report.md</text>
+
+  <path class="line" d="M286 260 C330 260, 340 260, 390 260"/>
+  <path class="line" d="M750 205 C796 185, 815 176, 864 176"/>
+  <path class="line" d="M864 226 C812 251, 793 259, 750 262"/>
+  <path class="line2" d="M750 318 C806 342, 821 374, 864 412"/>
+  <path class="line2" d="M864 474 C805 468, 786 442, 750 354"/>
+  <path class="line" d="M572 385 C572 418, 572 432, 572 460"/>
+
+  <text x="316" y="240" class="subtitle">goal + run controls</text>
+  <text x="770" y="154" class="subtitle">plan prompt</text>
+  <text x="760" y="292" class="subtitle">review result</text>
+  <text x="780" y="376" class="subtitle">task prompt</text>
+  <text x="750" y="520" class="subtitle">logs and report</text>
+</svg>

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+npm-debug.log*
+.cbduel/
+cbduel.config.json
+.env
+.env.*
+*.pem
+*.key
+*.log
+coverage/
+*.tsbuildinfo

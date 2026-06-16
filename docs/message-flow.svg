@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" role="img" aria-labelledby="title desc">
+  <title id="title">ClaudeBrainDuel message flow</title>
+  <desc id="desc">Each iteration routes Master prompts, Worker tasks, Git diff, test logs, reviews, commits, and reports through local files.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 32px "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .lane { fill: #e0f2fe; stroke: #38bdf8; stroke-width: 1.4; }
+      .lane2 { fill: #ecfdf5; stroke: #34d399; stroke-width: 1.4; }
+      .lane3 { fill: #fff7ed; stroke: #fb923c; stroke-width: 1.4; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .box-title { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .box-body { font: 400 13.5px "Segoe UI", Arial, sans-serif; fill: #334155; }
+      .file { font: 600 13px "Consolas", monospace; fill: #1d4ed8; }
+      .arrow { stroke: #2563eb; stroke-width: 2.6; fill: none; marker-end: url(#arrow); }
+      .arrow-green { stroke: #059669; stroke-width: 2.6; fill: none; marker-end: url(#arrow); }
+      .phase { font: 700 15px "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+    </style>
+  </defs>
+  <rect class="bg" width="1180" height="720"/>
+  <text x="44" y="56" class="title">One Iteration: Message Bus and Artifact Flow</text>
+  <text x="44" y="86" class="subtitle">The user does not copy messages. Orchestrator writes and reads local JSONL / text artifacts.</text>
+
+  <rect x="54" y="122" width="220" height="510" rx="18" class="lane"/>
+  <text x="84" y="154" class="phase">1. Master Planning</text>
+  <rect x="82" y="184" width="164" height="96" rx="12" class="box"/>
+  <text x="102" y="211" class="box-title">Input</text>
+  <text x="102" y="236" class="box-body">goal, previous summary</text>
+  <text x="102" y="258" class="box-body">git diff, test logs</text>
+  <text x="102" y="304" class="file">master_in.jsonl</text>
+  <rect x="82" y="340" width="164" height="116" rx="12" class="box"/>
+  <text x="102" y="367" class="box-title">Output</text>
+  <text x="102" y="392" class="box-body">worker task</text>
+  <text x="102" y="414" class="box-body">acceptance criteria</text>
+  <text x="102" y="436" class="box-body">risk controls</text>
+  <text x="102" y="480" class="file">master_out.jsonl</text>
+
+  <rect x="340" y="122" width="220" height="510" rx="18" class="lane2"/>
+  <text x="376" y="154" class="phase">2. Worker Execution</text>
+  <rect x="368" y="184" width="164" height="116" rx="12" class="box"/>
+  <text x="388" y="211" class="box-title">Task Prompt</text>
+  <text x="388" y="236" class="box-body">implementation work</text>
+  <text x="388" y="258" class="box-body">test/build request</text>
+  <text x="388" y="280" class="box-body">quality bar</text>
+  <text x="388" y="324" class="file">worker_in.jsonl</text>
+  <rect x="368" y="360" width="164" height="116" rx="12" class="box"/>
+  <text x="388" y="387" class="box-title">Result</text>
+  <text x="388" y="412" class="box-body">summary, changed files</text>
+  <text x="388" y="434" class="box-body">commands, errors</text>
+  <text x="388" y="456" class="box-body">ready for review</text>
+  <text x="388" y="500" class="file">worker_out.jsonl</text>
+
+  <rect x="626" y="122" width="220" height="510" rx="18" class="lane3"/>
+  <text x="664" y="154" class="phase">3. Verification</text>
+  <rect x="654" y="184" width="164" height="126" rx="12" class="box"/>
+  <text x="674" y="211" class="box-title">Collected Logs</text>
+  <text x="674" y="236" class="box-body">git status and diff</text>
+  <text x="674" y="258" class="box-body">test output</text>
+  <text x="674" y="280" class="box-body">build output</text>
+  <text x="674" y="334" class="file">git_diff.patch</text>
+  <text x="674" y="356" class="file">test_log.txt</text>
+  <rect x="654" y="404" width="164" height="110" rx="12" class="box"/>
+  <text x="674" y="431" class="box-title">Master Review</text>
+  <text x="674" y="456" class="box-body">pass / partial / fail</text>
+  <text x="674" y="478" class="box-body">continue next?</text>
+  <text x="674" y="538" class="file">review.md</text>
+
+  <rect x="912" y="122" width="220" height="510" rx="18" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.4"/>
+  <text x="958" y="154" class="phase">4. Persistence</text>
+  <rect x="940" y="184" width="164" height="116" rx="12" class="box"/>
+  <text x="960" y="211" class="box-title">Safe Git</text>
+  <text x="960" y="236" class="box-body">add allowed paths</text>
+  <text x="960" y="258" class="box-body">commit if changed</text>
+  <text x="960" y="280" class="box-body">push only if enabled</text>
+  <text x="960" y="324" class="file">commit.txt</text>
+  <rect x="940" y="360" width="164" height="136" rx="12" class="box"/>
+  <text x="960" y="387" class="box-title">Reports</text>
+  <text x="960" y="412" class="box-body">iteration summary</text>
+  <text x="960" y="434" class="box-body">known issues</text>
+  <text x="960" y="456" class="box-body">run/test methods</text>
+  <text x="960" y="520" class="file">iteration_log.txt</text>
+  <text x="960" y="542" class="file">final_report.md</text>
+
+  <path class="arrow" d="M246 402 C292 402, 314 242, 368 242"/>
+  <path class="arrow-green" d="M532 420 C590 420, 604 246, 654 246"/>
+  <path class="arrow" d="M818 458 C870 458, 887 242, 940 242"/>
+  <path class="arrow" d="M736 404 C736 356, 580 324, 532 300"/>
+  <path class="arrow-green" d="M818 514 C868 540, 885 438, 940 428"/>
+
+  <text x="278" y="360" class="subtitle">Worker task</text>
+  <text x="558" y="374" class="subtitle">real code changes + logs</text>
+  <text x="832" y="360" class="subtitle">commit/report decision</text>
+  <text x="588" y="318" class="subtitle">review feedback drives next round</text>
+
+  <rect x="54" y="662" width="1078" height="34" rx="17" fill="#dbeafe" stroke="#60a5fa"/>
+  <text x="78" y="684" class="subtitle">All data stays local under .cbduel/runs/&lt;run_id&gt; unless the user explicitly enables Git push.</text>
+</svg>

@@ -1,0 +1,35 @@
+{
+  "name": "claude-brain-duel",
+  "version": "0.1.0",
+  "description": "Local unattended Master/Worker AI development orchestrator powered by Claude Code CLI.",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "ai-agent",
+    "cli",
+    "automation",
+    "orchestrator",
+    "unattended-development"
+  ],
+  "bin": {
+    "cbduel": "dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/*.js",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "files": [
+    "dist",
+    "templates",
+    "README.md",
+    "package.json"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3"
+  }
+}
